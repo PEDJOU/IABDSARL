@@ -1,0 +1,53 @@
+<!-- This is the home page. -->
+<!-- Look in the login folder for the login code. -->
+
+
+<ActionBar class="action-bar" title="IABD-CENTER">
+  <NavigationButton  android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()">
+  </NavigationButton>
+</ActionBar>
+
+<FlexboxLayout class="page">
+  <StackLayout class="form">
+    <Image class="image" src="~/images/iabd.png"></Image>
+    <Label class="header" [text]="message" textWrap="true"></Label>
+
+    <PreviousNextView>
+      <GridLayout rows="auto">
+
+        <StackLayout row="0" class="input-field">
+            <Label  text="Entrer le Montant à retirer" class="description-label"></Label>
+            <TextField class="input" hint="" autocorrect="false"
+            autocapitalizationType="none" [(ngModel)]="montant" keyboardType="phone"
+            returnKeyType="done"></TextField>
+            <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+      </GridLayout>
+    </PreviousNextView>
+
+    <Button text="Valider" (tap)="submit()" class="btn btn-primary m-t-20"></Button>
+
+
+
+  </StackLayout>
+</FlexboxLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<ScrollView sdkExampleTitle sdkToggleNavButton>
+      <FlexboxLayout flexDirection="column-reverse"> -->
+<!--  <Image [src]="imageTaken" flexGrow="3" class="p-15 img-rounded"></Image>  -->
+<!-- <Button text="Take Photo" class="btn btn-primary btn-active" (tap)="onTakePhoto()" flexGrow="1"></Button>  -->
+<!-- <Button text="Request permissions" class="btn btn-primary btn-active" (tap)="onRequestPermissions()" flexGrow="1"></Button>  -->
+<!-- </FlexboxLayout> -->
+<!-- </ScrollView> -->

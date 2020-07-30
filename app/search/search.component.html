@@ -1,0 +1,36 @@
+<!-- This is the home page. -->
+<!-- Look in the login folder for the login code. -->
+
+<ActionBar class="action-bar"  title="IABD">
+  <NavigationButton  android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()">
+  </NavigationButton>
+</ActionBar>
+
+
+<FlexboxLayout class="page">
+  <StackLayout class="form">
+    <Image class="image" src="~/images/iabd.png"></Image>
+    <Label class="header" [text]="message" textWrap="true"></Label>
+
+    <PreviousNextView>
+      <GridLayout rows="auto">
+
+        <StackLayout row="0" class="input-field">
+            <Label  text="Entrer le Matricule du Planteur"></Label>
+            <TextField class="input" hint="" autocorrect="false"
+            autocapitalizationType="none" [(ngModel)]="matricule"
+            returnKeyType="done"  ></TextField>
+           <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+
+      </GridLayout>
+    </PreviousNextView>
+
+    <Button text="Recherche du Compte" (tap)="submit()" class="btn btn-primary m-t-20"></Button>
+
+
+
+  </StackLayout>
+</FlexboxLayout>
+
+

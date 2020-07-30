@@ -1,0 +1,81 @@
+<!-- This is the home page. -->
+<!-- Look in the login folder for the login code. -->
+
+<ActionBar title="">
+  <NavigationButton text="Deconnecté" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()">
+  </NavigationButton>
+  
+  <ActionItem ios.systemIcon="1" android.systemIcon="ic_menu_close_clear_cancel" (tap)="onCancel()"></ActionItem>
+  <ActionItem ios.systemIcon="16" ios.position="right" text="Photo" android.position="popup" (tap)="onTakePhoto()">
+  </ActionItem>
+</ActionBar>
+
+
+
+
+<!--<Image class="logo" src="~/images/iabd.png"></Image>-->
+
+
+<FlexboxLayout class="page">
+  <StackLayout class="form">
+    <Image class="logo" src="~/images/iabd.png"></Image>
+    <Label class="header" [text]="message"></Label>
+
+    <PreviousNextView>
+      <GridLayout rows="auto, auto, auto">
+
+        <StackLayout row="0" class="input-field">
+            <Label  text="Nom Planteur"></Label>
+            <TextField class="input" hint="" autocorrect="false"
+            autocapitalizationType="none" [(ngModel)]="planteurs.nom"
+            returnKeyType="next" ></TextField>
+           <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+
+        
+        <StackLayout row="1" class="input-field">
+            <Label  text="Prenom Planteur"></Label>
+            <TextField class="input" hint="" autocorrect="false"
+            autocapitalizationType="none" [(ngModel)]="planteurs.prenom"
+            returnKeyType="next" ></TextField>
+            <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+
+        <StackLayout row="2" class="input-field">
+            <Label  text="Contact Planteur"></Label>
+                <TextField class="input" hint="" autocorrect="false"
+                autocapitalizationType="none" [(ngModel)]="planteurs.contact"
+                returnKeyType="done" ></TextField>
+                <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+      
+
+      </GridLayout>
+    </PreviousNextView>
+
+    <Button text="Enregistrer" (tap)="submit()" class="btn btn-primary m-t-20"></Button>
+
+
+
+  </StackLayout>
+</FlexboxLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<ScrollView sdkExampleTitle sdkToggleNavButton>
+      <FlexboxLayout flexDirection="column-reverse"> -->
+<!--  <Image [src]="imageTaken" flexGrow="3" class="p-15 img-rounded"></Image>  -->
+<!-- <Button text="Take Photo" class="btn btn-primary btn-active" (tap)="onTakePhoto()" flexGrow="1"></Button>  -->
+<!-- <Button text="Request permissions" class="btn btn-primary btn-active" (tap)="onRequestPermissions()" flexGrow="1"></Button>  -->
+<!-- </FlexboxLayout> -->
+<!-- </ScrollView> -->

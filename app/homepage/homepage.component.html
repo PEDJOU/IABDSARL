@@ -1,0 +1,33 @@
+
+<ActionBar class="action-bar" title="IABD-CENTER">
+   
+</ActionBar>
+
+
+<GridLayout rows="auto, *, auto">
+    <StackLayout row="0" class="m-b-25">
+        <Label class="t-18 text-center title" [text]="retrait.nomCash"></Label>
+        <Label class="t-18 text-center font-weight-bold" [text]="retrait.nomUser"></Label>
+        <StackLayout class="hr"></StackLayout>
+    </StackLayout>
+    <GridLayout row="1" rows="auto, auto" columns="*, *" class="menu-container">
+        <StackLayout row="0" col="0" data-name="home" class="menu-item">
+            <Button text="&#xf015;" class="fa menu-icon" (tap)="onMenuButtonTap($event)"></Button>
+            <Label text="Retrait Cash" class="text-center" (tap)="onMenuButtonTap($event)"></Label>
+        </StackLayout>
+        <StackLayout row="0" col="1" data-name="news" class="menu-item">
+            <Button text="&#xf1ea;" class="fa menu-icon" (tap)="onreleveButtonTap($event)"></Button>
+            <Label text="Rélévé" class="text-center" (tap)="onreleveButtonTap($event)"></Label>
+        </StackLayout>
+        <StackLayout row="1" col="0" data-name="favorites" class="menu-item">
+            <Button text="&#xf005;" class="fa menu-icon" (tap)="onNewButtonTap($event)"></Button>
+            <Label text="Enregistrement" class="text-center" (tap)="onNewButtonTap($event)"></Label>
+        </StackLayout>
+        <StackLayout row="1" col="1" data-name="settings" class="menu-item">
+            <Button text="&#xf013;" class="fa menu-icon" (tap)="onListeButtonTap($event)"></Button>
+            <Label text="Liste Centers" class="text-center" (tap)="onListeButtonTap($event)"></Label>
+        </StackLayout>
+    </GridLayout>
+    <Button row="2" class="btn btn-rounded-sm btn-primary btn-margin font-weight-bold t-18 flexbox-item"
+        (tap)="logout()" text="Quitter"></Button>
+</GridLayout>

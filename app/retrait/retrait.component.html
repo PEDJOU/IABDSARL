@@ -1,0 +1,52 @@
+<ActionBar class="action-bar" title="IABD-CENTER">
+    <NavigationButton  android.systemIcon="ic_menu_back" (tap)="onProfileButtonTap()">
+    </NavigationButton>
+</ActionBar>
+
+<GridLayout class="page page-content home-page-content" rows="160, 80, *">
+    <!-- Chart -->
+    <StackLayout row="0" class="balance-chart">
+        <StackLayout row="0" class="m-b-25">
+            <Label class="t-18 text-center font-weight-bold" [text]="nomCash"></Label>
+            <Label class="t-18 text-center font-weight-bold" text="Montant des Transactions"></Label>
+            <Label class="t-18 text-center title" [text]="montantgle"></Label>
+            <StackLayout class="hr"></StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+    <!-- Balance Summary -->
+    <GridLayout row="1" columns="*, *, *" class="balance-summary">
+        <StackLayout col="0">
+            <Label text="Frais" class="title"></Label>
+            <Label [text]="frais" class="ammount"></Label>
+            <Label class="hr-light green" [style.width]="'35%'"></Label>
+        </StackLayout>
+
+        <StackLayout col="1">
+            <Label text="Taux" class="title"></Label>
+            <Label text="45%" class="ammount"></Label>
+            <Label class="hr-light red" [style.width]="'25%'"></Label>
+        </StackLayout>
+
+        <StackLayout col="2">
+            <Label text="Gain" class="title"></Label>
+            <Label [text]="gaingle" class="ammount"></Label>
+            <Label class="hr-light green" [style.width]="'15%'"></Label>
+        </StackLayout>
+    </GridLayout>
+
+    <!-- Trnsactions -->
+    <StackLayout row="2">
+        <ListView class="transactions-list" [items]="operation" (itemTap)="onItemTap($event)" >
+			<ng-template let-operation="item">
+				<FlexboxLayout justifyContent="space-between" alignItems="center">
+					<FlexboxLayout flexDirection="row" class="list-group-item">
+						<Image src="~/images/iabds.png" class="image"></Image>
+						<Label [text]="operation.matricule" class="list-group-item-heading" verticalAlignment="center"></Label>
+					</FlexboxLayout>
+					<Label [text]="operation.montant" class="minus" paddingRight="18"></Label>
+				</FlexboxLayout>
+			</ng-template>
+		</ListView>
+    </StackLayout>
+</GridLayout>
